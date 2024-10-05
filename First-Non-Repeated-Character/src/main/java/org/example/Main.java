@@ -1,6 +1,10 @@
 package org.example;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -79,4 +83,28 @@ public class Main {
         return position == Integer.MAX_VALUE ?
                 Character.MIN_VALUE : string.charAt(position);
     }
+
+    // Solution using streams:
+    public static String firstNonRepeatedCharacterV3(String string) {
+        if (string == null || string.isBlank()) {
+            return String.valueOf(Character.MIN_VALUE);
+        }
+
+        Map<Integer, Long> characters =
+                string.chars()
+                      .mapToObj(ch -> ch)
+                      .collect(Collectors.groupingBy(
+                              Function.identity(),
+                              LinkedHashMap::new,
+                              Collectors.counting()));
+
+        int cp = characters.entrySet().stream()
+                .filter(e -> e.getValue() == 1L)
+                .findFirst()
+                .map(Map.Entry::getKey)
+                .orElse(Integer.valueOf(Character.MIN_VALUE));
+
+        return String.valueOf(Character.toChars(cp));
+    }
+
 }
