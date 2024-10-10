@@ -22,7 +22,7 @@ public class Main {
         if (prefix == null || str == null || str.isBlank()) {
             throw new IllegalArgumentException("Invalid input");
         }
-        
+
         int length = str.length();
 
         if (length == 0) {
