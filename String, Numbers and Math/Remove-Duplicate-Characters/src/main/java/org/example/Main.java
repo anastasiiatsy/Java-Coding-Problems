@@ -40,6 +40,10 @@ public class Main {
     }
 
     public static String removeDuplicatesV2(String str) {
+        if (str.isBlank() || str == null) {
+            throw new IllegalArgumentException("Invalid string");
+        }
+
         Set<Character> characters = new HashSet<>();
         StringBuilder builder = new StringBuilder();
 
