@@ -19,10 +19,18 @@ public class Main {
      */
 
     public static String removeCharacter(char ch, String str) {
+        if (str == null  || str.isBlank()) {
+            throw new IllegalArgumentException("Invalid string");
+        }
+
         return str.replaceAll(String.valueOf(ch), "");
     }
 
     public static String removeCharacterV2(char c, String str) {
+        if (str == null  || str.isBlank()) {
+            throw new IllegalArgumentException("Invalid string");
+        }
+
         StringBuilder builder = new StringBuilder();
 
         for (char ch : str.toCharArray()) {
@@ -33,6 +41,4 @@ public class Main {
         return  builder.toString();
     }
 
-    
-    
 }
