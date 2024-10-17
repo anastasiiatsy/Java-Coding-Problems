@@ -33,7 +33,7 @@ public class Main {
         if (str == null || str.isBlank()) {
             throw new IllegalArgumentException("Invalid input");
         }
-        
+
         return str.repeat(n);
     }
 }
