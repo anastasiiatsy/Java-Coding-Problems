@@ -1,0 +1,27 @@
+equals() and hashCode():
+
+- Both methods are defined in java.lang.Object class
+- Object is a superclass of all Java objects. For this reason, 
+both methods are available for all objects
+- Both methods help determine if two objects are equal
+- If the methods are not overriden, Java uses their default 
+implementations
+- Default implementation checks if two objects are represented by the same memory address, meaning if they have the same reference
+- hashCode() returns an integer representation of the object memory address
+- equals() contract imposes the following statements:
+  a) Reflexivity: An object is equal to itself, which means that       p1.equals(p1) must return true.
+  b) Symmetry: p1.equals(p2) must return the same result       (true/false) as p2.equals(p1).
+  c) Transitive: If p1.equals(p2) and p2.equals(p3), then also       p1.equals(p3).
+  d) Consistent: Two equal objects must remain equal all the       time unless one of them is changed.
+  e) Null returns false: All objects must be unequal to null.
+
+- equals() should return the same hash code
+- if two unequal objects have the same hash code, this is a hash collision, and the objects will go in the same bucket
+- hashCode() contract imposes the following:
+  a) Two equal objects conforming to equals() must return the       same hash code
+   b) Two objects with the same hash code are not mandatoy        equals
+   c) As long as the object remains unchanged, hashCode()       must return the same value
+
+- To respespect the equals() and hashCode() contracts, the following rules should be followed:
+   a) When equals() is overridden, hashCode() must be        overridden as well, and vice versa.
+   b) Use the same identifying attributes for both methods in        the same order.
