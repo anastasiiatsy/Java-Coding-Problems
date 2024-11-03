@@ -1,0 +1,9 @@
+- An object is considered immutable if its state cannot be changed after it is created
+- Immutable object has a fixed state, which means that its properties cannot be modified
+- Any operation that appears to modify the object actually creates a new object with the updated state
+- Primitive types are immutable
+- Java String class is immutable
+- Arrays are mutable
+- Collections can be mutable, unmodifiable or immutable
+- An unmodifiable collection is not automatically immutable. It depends on which objects are stored in it. If the stored objects are mutable, then the collection is mutable and unmodifiable. But if the stored objects are immutable, then the collection is effectively immutable.
+- Immutable objects are useful in concurrent applications and streams, as they don't risk being corrupted or inconsistent
