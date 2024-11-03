@@ -11,12 +11,12 @@ In this case, only one String object with the "book" value was created and not t
 
 When a string literal is created, java checks the SCP, to see if it exists. If the string literal is not found in SCP, then a new string object for the string literal is created in the SCP and the corresponding variable will point to it.
 
-If the string literal is found in the SCP, then the new variable will poit to the existing String object. 
+If the string literal is found in the SCP, then the new variable will point to the existing String object. 
 
-If the programer decides to change the value of the object (for instance x should be "cook" and not "book"), Java will create a new object and x will start to point to the newly created object "cook", while y and z will continue to point to the "book" object.
+If the programmer decides to change the value of the object (for instance x should be "cook" and not "book"), Java will create a new object and x will start to point to the newly created object "cook", while y and z will continue to point to the "book" object.
 
 String immutability permits the caching of string literals, which allows applications to use a large number of string literals with a minimum impact on the heap memory and garbage collector. In a mutable context, a modification of a string literal may lead to corrupted variables.
 
 2. Security
 
-Many sensitive information like for instance usernames, passwords, URLs, ports, databases etc. are represented and passed around as strings. By having this information immutable, the code becomes secure to a lot of security threads, as it is not possible to modify the references. 
+Many sensitive information like usernames, passwords, URLs, ports, databases, and so on, are represented and passed around as strings. By having this information immutable, the code becomes secure to a lot of security threads, as it is not possible to modify the references. 
